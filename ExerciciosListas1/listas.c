@@ -24,6 +24,7 @@ int comprimento (Lista* l)
         tamanho++;
     }
 
+    free(p);
     return tamanho;
 }
 
@@ -38,6 +39,7 @@ int maiores (Lista* l, int n){
         }
     }
 
+    free(p);
     return quantidade;
 }
 
@@ -49,6 +51,7 @@ Lista* ultimo (Lista* l){
         ant = p;
     }
 
+    free(p);
     return ant;
 }
 
@@ -58,6 +61,8 @@ void lst_imprime (Lista* l)
     for (p = l; p != NULL; p = p->prox){
         printf("info = %d\n", p->info);
     }
+
+    free(p);
 }
 
 Lista* concatena (Lista* l1, Lista* l2){
@@ -74,5 +79,7 @@ Lista* concatena (Lista* l1, Lista* l2){
 
     ant->prox = l2;
 
+    free(p);
+    free(ant);
     return l1;
 }
