@@ -38,6 +38,8 @@ Lista* lst_insere_fim (Lista* l, int i)
 
     ant->prox = novo;
 
+    free(p);
+    free(ant);
     return l;
 }
 
@@ -47,6 +49,8 @@ void lst_imprime (Lista* l)
     for (p = l; p != NULL; p = p->prox){
         printf("info = %d\n", p->info);
     }
+
+    free(p);
 }
 
 Lista* lst_altera (Lista* l){
@@ -55,6 +59,7 @@ Lista* lst_altera (Lista* l){
         p->info = p->info*-1;
     }
 
+    free(p);
     return l;
 }
 
@@ -73,12 +78,13 @@ Lista* lst_calculaMedia (Lista* l){
 
     printf("media dos valores = %f\n",  soma);
 
+    free(p);
     return l;
 }
 
 Lista* lst_retira_ant (Lista* l, int v){
 
-    Lista* ant;
+    Lista* ant = NULL;
     Lista* p;
     Lista* dep;
 
@@ -87,12 +93,15 @@ Lista* lst_retira_ant (Lista* l, int v){
 
     if(dep->info == v){
         l = dep;
-        p = NULL;
+        free(p);
+        free(dep);
+        free(ant);
         return l;
     }
 
     if(p->info == v){
         printf("Termo antecessor ao digitado nao existe\n");
+        free(p);
         return l;
     }
 
@@ -103,7 +112,9 @@ Lista* lst_retira_ant (Lista* l, int v){
     }
 
     ant->prox = dep;
-    p = NULL;
+    free(p);
+    free(ant);
+    free(dep);
 
     return l;
 }
