@@ -14,17 +14,12 @@ protótipo:
 
 3. Escreva uma função em C que retorne, a partir de duas filas ordenadas de inteiros (do menor
 para o maior), uma outra fila também ordenada, resultante da concatenaçao das 2 filas de
-entrada.
-
-Para isto, assuma que as funções básicas de manipulação de filas já estão implementadas, com os
+entrada.<br />Para isto, assuma que as funções básicas de manipulação de filas já estão implementadas, com os
 seguintes protótipos: __Fila* fila_cria (void), void INSERE (Fila* fila, int elemento), int RETIRA
 (Fila* fila), bool VAZIA (Fila* fila) e int FRENTE (Fila* fila)__. Essas funções correspondem,
 respectivamente, a criação da fila, a inserção na fila, remoção da fila, verificação se a fila está vazia
-
 (retorna true se vazia; false caso contrário) e obtenção do elemento da frente da fila (sem removê-
-lo). Você pode usar estas funções para a solução da questão. Sua solução deve ser independente do
-
-TAD (ou seja, não se sabe se a fila está implementada como vetor ou como lista).
+lo). Você pode usar estas funções para a solução da questão.
 A função criada deve ter o seguinte protótipo: Fila* ORDENAR (Fila* fila1, Fila* fila2). A fila
 resultante já deve ser composta de forma ordenada (não é possível formar a fila resultante
 desordenada e depois usar um algoritmo de ordenação!)
